@@ -1,6 +1,6 @@
 --Prova finale di Reti Logiche
---Prof. Fabio Salice, AA 2019/20
---Davide Mantegazza (10568661)
+--Prof. Fabio Salice, A.A. 2019/20
+--Davide Mantegazza
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -38,7 +38,6 @@ architecture behavioral of project_reti_logiche is
             if (i_rst = '1') then
                 o_en <= '0';
                 o_we <= '0';
-                --azzera variabili
                 address_to_convert := "00000000";
                 current_wz := "00000000";
                 address_saved := false;
