@@ -19,7 +19,6 @@ signal   mem_we		        : std_logic;
 
 type ram_type is array (65535 downto 0) of std_logic_vector(7 downto 0);
 
--- come da esempio su specifica
 signal RAM: ram_type := (0 => std_logic_vector(to_unsigned( 2 , 8)),
                          1 => std_logic_vector(to_unsigned( 9 , 8)),
                          2 => std_logic_vector(to_unsigned( 18 , 8)),
@@ -97,7 +96,7 @@ begin
     tb_start <= '0';
     wait until tb_done = '0';
 
-    -- Maschera di output = 1 - 011 - 0100
+    -- Maschera di output = 1-111-1000
     assert RAM(9) = std_logic_vector(to_unsigned( 248 , 8)) report "TEST FALLITO. Expected  248  found " & integer'image(to_integer(unsigned(RAM(9))))  severity failure;
  
     assert false report "Simulation Ended!, TEST PASSATO" severity failure;
